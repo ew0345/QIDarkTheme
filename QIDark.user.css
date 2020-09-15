@@ -453,7 +453,8 @@ domain("webnovel.com") {
     }
     form[action="/search"],
     .j_search_panel,
-    .j_search_modal_input {
+    .j_search_modal_input,
+    .g_search_result ul{
         background-color: #1a1a1a !important;
         color: #eee !important;
     }
@@ -462,6 +463,12 @@ domain("webnovel.com") {
     }
     .hom-rec-1st p {
         color: #ccc !important;
+    }
+    .g_search_result ul span a:hover {
+        background-color: #303030 !important;
+    }
+    .g_search_result ul span svg {
+        color: #aaa !important;
     }
 }
 
