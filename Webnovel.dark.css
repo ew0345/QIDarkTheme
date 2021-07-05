@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           Webnovel - Dark Theme
 @namespace      ew0345
-@version        1.0.3
+@version        1.0.4
 @description    A dark theme for Webnovel/Qidian International
 @author         ew0345
 ==/UserStyle== */
 
 /***
-    * CHANGLOG *
+    * CHANGELOG *
+
+    Version 1.0.4:
+        Browse/category page styled.
 
     Version 1.0.3:
         Login pop-up & login w/ email pop-up styled.
@@ -30,6 +33,7 @@
         --bg_dark: #1f1f1f;
         --bg_light: #303030;
         --bg_light_hover: rgba(100,100,100,0.5);
+        --bg_selected: #3b66f5;
         
         --txt: #eee;
         --txt_dark: #aaa;
@@ -40,6 +44,7 @@
 
 
 @-moz-document domain("passport.webnovel.com") {
+    /* Sign-in/passport */
     html,
     body div {
         background: var(--bg);
@@ -53,7 +58,7 @@
         color: var(--txt);
     }
 }
-@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)") {
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*") {
     /* Header Bar */
     .g_header {
         background-color: var(--bg);
@@ -259,5 +264,54 @@
     
     section[data-report-blocktitle="Potential Entrant"] {
         background: var(--bg_dark);
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/category/.*") {
+    /* Browse Page */
+    
+    /* Page body */
+    html,
+    body {
+        background-color: var(--bg_dark);
+        color: var(--txt);
+    }
+    
+    /* Headers */
+    h3,
+    .j_filter_form h4 {
+        color: var(--txt_title);
+    }
+    
+    /* Genre list */
+    .m-switch {
+        background-color: var(--bg_light);
+    }
+    .m-switch label {
+        color: var(--txt_genre);
+    }
+    
+    .m-switch-0:checked ~ .m-switch label:first-child,
+    .m-switch-1:checked ~ .m-switch label:not(:first-child) {
+        background-color: var(--bg_selected);
+        color: var(--txt);
+    }
+    
+    .m-accordion-bd li a {
+        color: var(--txt_genre);
+    }
+    
+    .m-accordion-icon {
+        color: var(--txt);
+    }
+    
+    /* Novel List */
+    .j_category_wrapper h3 a {
+        color: var(--txt_title);
+    }
+    
+    .j_category_wrapper p,
+    .j_category_wrapper p strong {
+        color: var(--txt_genre)
     }
 }
