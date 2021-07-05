@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           Webnovel - Dark Theme
 @namespace      ew0345
-@version        1.0.4
+@version        1.0.5
 @description    A dark theme for Webnovel/Qidian International
 @author         ew0345
 ==/UserStyle== */
 
 /***
     * CHANGELOG *
+
+    Version 1.0.5:
+        Rankings page styled.
 
     Version 1.0.4:
         Browse/category page styled.
@@ -39,6 +42,9 @@
         --txt_dark: #aaa;
         --txt_genre: #83848f;
         --txt_title: lightslategray;
+        --txt_lcol1: #eb1551;
+        --txt_lcol2: #ff8d29;
+        --txt_lcol3: #39cca0;
     }
 }
 
@@ -58,7 +64,7 @@
         color: var(--txt);
     }
 }
-@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*") {
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*") {
     /* Header Bar */
     .g_header {
         background-color: var(--bg);
@@ -283,7 +289,7 @@
         color: var(--txt_title);
     }
     
-    /* Genre list */
+    /* Genre List */
     .m-switch {
         background-color: var(--bg_light);
     }
@@ -313,5 +319,75 @@
     .j_category_wrapper p,
     .j_category_wrapper p strong {
         color: var(--txt_genre)
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/ranking/.*") {
+    /* Rankings Pages */
+    
+    /* Page body */
+    html,
+    body {
+        background-color: var(--bg_dark);
+        color: var(--txt);
+    }
+    
+    /* Headers */
+    h3,
+    .g_hr h4 {
+        color: var(--txt_title);
+    }
+    
+    /* Genre List */
+    .m-accordion-bd a {
+        color: var(--txt_genre);
+    }
+    
+    .m-accordion-icon {
+        color: var(--txt);
+    }
+    
+    /* Ranking List */
+    .f1 h5 {
+        color: var(--txt_genre);
+    }
+    
+    .m-release-item strong,
+    .j_show_filter_sel strong,
+    .j_show_filter_sel svg {
+        color: var(--txt);
+    }
+    
+    .j_rank_wrapper i.c_danger {
+        color: var(--txt_lcol1) !important;
+    }
+    
+    .j_rank_wrapper i.c_warning {
+        color: var(--txt_lcol2) !important;
+    }
+    
+    .j_rank_wrapper i.c_success {
+        color: var(--txt_lcol3) !important;
+    }
+    
+    .j_rank_wrapper .ff_number.tac {
+        color: var(--txt);
+    }
+    
+    .j_rank_wrapper h3 a {
+        color: var(--txt_title)
+    }
+    
+    .j_rank_wrapper .vam {
+        color: var(--txt_genre);
+    }
+    
+    /* Other Filters dropdown */
+    .j_show_filter_container {
+        background: var(--bg_light);
+    }
+    
+    .j_show_filter_container legend {
+        color: var(--txt_genre);
     }
 }
