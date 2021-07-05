@@ -1,0 +1,263 @@
+/* ==UserStyle==
+@name           Webnovel - Dark Theme
+@namespace      ew0345
+@version        1.0.3
+@description    A dark theme for Webnovel/Qidian International
+@author         ew0345
+==/UserStyle== */
+
+/***
+    * CHANGLOG *
+
+    Version 1.0.3:
+        Login pop-up & login w/ email pop-up styled.
+
+    Version 1.0.2:
+        Header search styled.
+
+    Version 1.0.1:
+        Header bar styled.
+
+    Version 1.0.0:
+        Main page/homepage styled.
+***/
+
+
+@-moz-document domain("webnovel.com") {
+    /* Variables */
+    :root {
+        --bg: #232323;
+        --bg_dark: #1f1f1f;
+        --bg_light: #303030;
+        --bg_light_hover: rgba(100,100,100,0.5);
+        
+        --txt: #eee;
+        --txt_dark: #aaa;
+        --txt_genre: #83848f;
+        --txt_title: lightslategray;
+    }
+}
+
+
+@-moz-document domain("passport.webnovel.com") {
+    html,
+    body div {
+        background: var(--bg);
+    }
+    
+    .m-main-hd h3 {
+        color: var(--txt_title);
+    }
+    
+    p.m-input input {
+        color: var(--txt);
+    }
+}
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)") {
+    /* Header Bar */
+    .g_header {
+        background-color: var(--bg);
+        border-bottom-color: var(--txt_title);
+    }
+    
+    .g_header .g_search svg,
+    .g_header .g_search strong {
+        color: var(--txt_title);
+    }
+    
+    .g_header .g_hd_link svg,
+    .g_header .g_hd_link strong {
+        color: var(--txt_title);
+    }
+    
+    /* Header Bar - Search */
+    
+    .g_search_modal .g_search_header,
+    .g_search_modal .g_search_header .g_search_input input {
+        background-color: var(--bg_dark);
+    }
+    
+    .g_search_modal .g_search_header .g_search_input input {
+        border-color: var(--txt_title);
+        color: var(--txt_title);
+    }
+    
+    .g_search_panel,
+    .g_search_result_list ul {
+        background-color: var(--bg_dark);
+    }
+    
+    .g_search_pop_list a,
+    .g_search_result_list a,
+    .g_search_result_list svg,
+    .j_search_history a {
+        color: var(--txt) !important;
+    }
+    
+    .g_search_pop_list a:hover,
+    .g_search_result_list a:hover {
+        background: var(--bg_light_hover);
+    }
+    
+    .j_search_history .g_search_tags a {
+        background-color: var(--bg_light);
+    }
+}
+
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)") {
+    /* Main Page */
+    
+    /* Page Body */
+    html,
+    body {
+        background: var(--bg_dark);
+        color: var(--txt);
+    }
+    
+    /* Weekly Book */
+    div[data-report-blocktitle="Weekly Book"] h3 {
+        color: var(--txt_title);
+    }
+    
+    /* Recent Activities */
+    div[data-report-blocktitle="Recent Activities"] h3 {
+        color: var(--txt_title);
+    }
+    
+    div[data-report-blocktitle="Recent Activities"] ul :hover {
+        /*background: var(--bg_light_hover);*/
+        background: none;
+    }
+    
+    div[data-report-blocktitle="Recent Activities"] ul :hover h4 {
+        color: var(--txt_dark) !important;
+    }
+    
+    div[data-report-blocktitle="Recent Activities"] p {
+        color: var(--txt_dark) !important;
+    }
+    
+    /* Weekly Featured */
+    div[data-report-blocktitle="Weekly Featured"] h3,
+    section[data-report-blocktitle="Weekly Featured"] h4, 
+    section[data-report-blocktitle="Weekly Featured"] h4 a {
+        color: var(--txt_title);
+    }
+    
+    .m-book3 {
+        background-color: var(--bg);
+    }
+    
+    /* Special For You */
+    div[data-report-blocktitle="Special For You"] h3,
+    div[data-report-blocktitle="Special For You"] h3 a {
+        color: var(--txt_title);
+    }
+    
+    /* Ranking */
+    div[data-report-blocktitle="Ranking"] h3,
+    div[data-report-blocktitle="Ranking"] h5 a {
+        color: var(--txt_title);
+    }
+    
+    div[data-report-blocktitle="Ranking"] p a {
+        color: var(--txt_genre);
+    }
+    
+    div[data-report-blocktitle="Ranking"] .c_danger {
+        color: #eb1551 !important;
+    }
+    
+    div[data-report-blocktitle="Ranking"] .c_warning {
+        color: #ff8d29 !important;
+    }
+    
+    div[data-report-blocktitle="Ranking"] .c_success {
+        color: #39cca0 !important;
+    }
+    
+    div[data-report-blocktitle="Ranking"] .ff_number {
+        color: var(--txt);
+    }
+    
+    /* New Ongoing Release */
+    section[data-report-blocktitle="New Ongoing Release"] {
+        background: var(--bg_dark);
+    }
+    
+    section[data-report-blocktitle="New Ongoing Release"] h3,
+    section[data-report-blocktitle="New Ongoing Release"] h4 a {
+        color: var(--txt_title);
+    }
+    
+    /* Potential Starlet */
+    div[data-report-blocktitle="Potential Starlet"] h3,
+    div[data-report-blocktitle="Potential Starlet"] h3 a{
+        color: var(--txt_title);
+    }
+    
+    div[data-report-blocktitle="Potential Starlet"] .bc_light_default {
+        background: var(--bg);
+    }
+    
+    /* New Tropes */
+    div[data-report-blocktitle="New Tropes"] h3,
+    div[data-report-blocktitle="New Tropes"] h3 a{
+        color: var(--txt_title);
+    }
+    
+    div[data-report-blocktitle="New Trops"] p a {
+        color: var(--txt_genre);
+    }
+    
+    /* Encouraging Novels */
+    section[data-report-blocktitle="Encouraging Novels"] {
+        background: var(--bg_dark);
+    }
+    
+    section[data-report-blocktitle="Encouraging Novels"] h3,
+    section[data-report-blocktitle="Encouraging Novels"] h4 a {
+        color: var(--txt_title);
+    }
+    
+    /* Completed */
+    div[data-report-blocktitle="Completed"] h3,
+    div[data-report-blocktitle="Completed"] h3 a {
+        color: var(--txt_title);
+    }
+    
+    div[data-report-blocktitle="Completed"] .bc_light_default {
+        background: var(--bg);
+    }
+    
+    /* Promising Novels */
+    div[data-report-blocktitle="Promising Novels"] h3,
+    div[data-report-blocktitle="Promising Novels"] h3 a {
+        color: var(--txt_title);
+    }
+    
+    div[data-report-blocktitle="Promising Novels"] p a {
+        color: var(--txt_genre);
+    }
+    
+    /* Trending Original */
+    div[data-report-blocktitle="Trending Original"] h3,
+    div[data-report-blocktitle="Trending Original"] h4 a {
+        color: var(--txt_title);
+    }
+    
+    /* Potential Entrant */
+    section[data-report-blocktitle="Potential Entrant"] h3,
+    section[data-report-blocktitle="Potential Entrant"] h4 a {
+        color: var(--txt_title);
+    }
+    
+    section[data-report-blocktitle="Potential Entrant"] p a {
+        color: var(--txt_genre);
+    }
+    
+    section[data-report-blocktitle="Potential Entrant"] {
+        background: var(--bg_dark);
+    }
+}
