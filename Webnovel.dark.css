@@ -1,13 +1,18 @@
 /* ==UserStyle==
 @name           Webnovel - Dark Theme
 @namespace      ew0345
-@version        1.0.5
+@version        1.0.6
 @description    A dark theme for Webnovel/Qidian International
 @author         ew0345
 ==/UserStyle== */
 
 /***
     * CHANGELOG *
+
+    Version 1.0.6:
+        Badges page styled.
+        Profile page styled.
+        "Limited Free For You" section on homepage styled.
 
     Version 1.0.5:
         Rankings page styled.
@@ -64,7 +69,7 @@
         color: var(--txt);
     }
 }
-@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*") {
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*"), regexp("http(s)://(www.)webnovel.com/profile/.*"), regexp("http(s)://(www.)webnovel.com/badges") {
     /* Header Bar */
     .g_header {
         background-color: var(--bg);
@@ -158,6 +163,12 @@
     
     .m-book3 {
         background-color: var(--bg);
+    }
+    
+    /* Limited Free For You */
+    div[data-report-blocktitle="Limited Free For You"] h3,
+    div[data-report-blocktitle="Limited Free For You"] h3 a {
+        color: var(--txt_title);
     }
     
     /* Special For You */
@@ -389,5 +400,38 @@
     
     .j_show_filter_container legend {
         color: var(--txt_genre);
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/profile/.*") {
+    /* Profile page */
+    
+    /* Page body */
+    html,
+    body,
+    .header {
+        background-color: var(--bg_dark);
+        color: var(--txt);
+    }
+    
+    .g_wrap p {
+        color: var(--txt);
+    }
+    
+    address svg, 
+    address strong {
+        color: var(--txt_genre);
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/badges") {
+    /* Badges Page */
+    
+    /* Page body */
+    html,
+    body,
+    .g_sub_hd {
+        background: var(--bg_dark);
+        color: var(--txt);
     }
 }
