@@ -1,13 +1,19 @@
 /* ==UserStyle==
 @name           Webnovel - Dark Theme
 @namespace      ew0345
-@version        1.0.6
+@version        1.0.8
 @description    A dark theme for Webnovel/Qidian International
 @author         ew0345
 ==/UserStyle== */
 
 /***
     * CHANGELOG *
+
+    Version 1.0.8:
+        Library & History pages styled.
+
+    Version 1.0.7:
+        Settings/Edit profile page styled.
 
     Version 1.0.6:
         Badges page styled.
@@ -69,7 +75,7 @@
         color: var(--txt);
     }
 }
-@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*"), regexp("http(s)://(www.)webnovel.com/profile/.*"), regexp("http(s)://(www.)webnovel.com/badges") {
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*"), regexp("http(s)://(www.)webnovel.com/profile/.*"), regexp("http(s)://(www.)webnovel.com/badges"), regexp("http(s)://(www.)webnovel.com/settings"), regexp("http(s)://(www.)webnovel.com/library(.*)"), regexp("http(s)://(www.)webnovel.com/history(.*)") {
     /* Header Bar */
     .g_header {
         background-color: var(--bg);
@@ -433,5 +439,90 @@
     .g_sub_hd {
         background: var(--bg_dark);
         color: var(--txt);
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/settings") {
+    /* Settings/Edit Profile Page */
+    
+    /* Page body */
+    html,
+    body,
+    .header {
+        background: var(--bg_dark);
+        color: var(--txt);
+    }
+    
+    #settingForm .g_row label,
+    #settingForm .g_row strong {
+        color: var(--txt);
+    }
+    
+    .fc_sel strong {
+        color: black !important;
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/library(.*)") {
+    /* Library Page */
+    
+    /* Page body */
+    html,
+    body,
+    .g_sub_hd {
+        background: var(--bg_dark);
+    }
+    
+    h2,
+    h3 {
+        color: var(--txt_title);
+    }
+    
+    a._on[title="Library"] {
+        color: var(--txt) !important;
+    }
+    
+    a[title="History"]:hover {
+        color: var(--txt_genre) !important;
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/history(.*)") {
+    /* History Page */
+    
+    /* Page body */
+    html,
+    body,
+    .g_sub_hd {
+        background: var(--bg_dark);
+    }
+    
+    h2 {
+        color: var(--txt_title);
+    }
+    
+    a._on[title="History"] {
+        color: var(--txt) !important;
+    }
+    
+    a[title="Library"] {
+        color: var(--txt_genre) !important;
+    }
+    
+    .g_col h3 a {
+        color: var(--txt_title);
+    }
+    
+    .g_star_num small {
+        color: var(--txt_genre);
+    }
+    
+    .g_tags a,
+    ._oprate a {
+        color: var(--bg_selected) !important;
+    }
+    
+    .g_col a {
+        color: var(--txt_genre);
     }
 }
