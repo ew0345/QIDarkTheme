@@ -1,13 +1,16 @@
 /* ==UserStyle==
 @name           Webnovel - Dark Theme
 @namespace      ew0345
-@version        1.0.8
+@version        1.0.9
 @description    A dark theme for Webnovel/Qidian International
 @author         ew0345
 ==/UserStyle== */
 
 /***
     * CHANGELOG *
+
+    Version 1.0.9:
+        Book page styled.
 
     Version 1.0.8:
         Library & History pages styled.
@@ -75,7 +78,7 @@
         color: var(--txt);
     }
 }
-@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*"), regexp("http(s)://(www.)webnovel.com/profile/.*"), regexp("http(s)://(www.)webnovel.com/badges"), regexp("http(s)://(www.)webnovel.com/settings"), regexp("http(s)://(www.)webnovel.com/library(.*)"), regexp("http(s)://(www.)webnovel.com/history(.*)") {
+@-moz-document regexp("http(s)://(www.)webnovel.com/(#*)"), regexp("http(s)://(www.)webnovel.com/category/.*"), regexp("http(s)://(www.)webnovel.com/ranking/.*"), regexp("http(s)://(www.)webnovel.com/profile/.*"), regexp("http(s)://(www.)webnovel.com/badges"), regexp("http(s)://(www.)webnovel.com/settings"), regexp("http(s)://(www.)webnovel.com/library(.*)"), regexp("http(s)://(www.)webnovel.com/history(.*)"), regexp("http(s)://(www.)webnovel.com/book/.*") {
     /* Header Bar */
     .g_header {
         background-color: var(--bg);
@@ -524,5 +527,138 @@
     
     .g_col a {
         color: var(--txt_genre);
+    }
+}
+
+@-moz-document regexp("http(s)://(www.)webnovel.com/book/.*") {
+    /* Book Page */
+    
+    /* Page Body */
+    body,
+    .page div {
+        background: var(--bg_dark);
+        color: var(--txt);
+    }
+    
+    /* Book Info */
+    .det-hd .c_000 {
+        color: var(--txt_genre);
+    }
+    
+    .det-info h2 {
+        color: var(--txt_title);
+    }
+    
+    .det-hd-detail a,
+    .det-hd-detail strong {
+        color: var(--txt_genre);
+    }
+    .det-hd address span {
+        color: var(--bg_selected);
+    }
+    
+    /* About | Table of Contents Bar */
+    .det-tab-nav ._on span {
+        color: var(--bg_selected) !important;
+    }
+    
+    /* About */
+    #about p.c_000 {
+        color: var(--txt);
+    }
+    
+    /* Table of Contents */
+    #contents li {
+        background: var(--bg_dark);
+    }
+    #contents li i {
+        color: var(--bg_selected);
+    }
+    #contents li strong {
+        color: var(--txt);
+    }
+    
+    /* You may also like */
+    .j_books_you_also_like .m-book-title h3 {
+        color: var(--txt_title);
+    }
+    .j_books_you_also_like .g_star_num small {
+        color: var(--txt_dark);
+    }
+    
+    /* Reviews */
+    #review .g_star_num small {
+        color: var(--txt_dark);
+    }
+    #review .g_tab_nav ._on {
+        color: var(--bg_selected);
+    }
+    .m-comment-tool {
+        color: var(--txt_dark);
+    }
+    .m-comment-ft strong {
+        color: var(--txt_dark);
+    }
+    #pagination .ui-page-x a,
+    #pagination .ui-page-x .ui-page-ellipsis {
+        color: var(--txt_dark);
+    }
+    #pagination .ui-page-x .ui-page-prev,
+    #pagination .ui-page-x .ui-page-next {
+        color: var(--txt);
+    }
+    
+    /* Leave a review */
+    #reviewModal .rev-modal-score-list strong {
+        color: var(--bg_selected)
+    }
+    #reviewModal textarea {
+        color: var(--txt);
+    }
+    #reviewModal .btn_rich_modal {
+        color: var(--txt)
+    }
+    #reviewModal .rich_modal_footer strong {
+        color: var(--txt);
+    }
+    
+    /* Review Replies */
+    #replyDetailModal div {
+        background: var(--bg);
+        color: var(--txt);
+    }
+    #replyDetailModal blockquote {
+        background: var(--bg_light);
+        color: var(--txt);
+    }
+    #replyDetailModal .g_mod_chat_ft input {
+        background: var(--bg);
+        color: var(--txt);
+    }
+    
+    /* Review Replies - Add a Comment */
+    .rich_modal .g_mod {
+        background: var(--bg);
+    }
+    .rich_modal .g_mod h4 {
+        color: var(--txt)
+    }
+    .rich_modal .g_mod .modal_quote,
+    .rich_modal .g_mod .modal_quote div {
+        background: var(--bg_light);
+        color: var(--txt);
+    }
+    .rich_modal .g_mod textarea {
+        background: var(--bg_light);
+        color: var(--txt) !important;
+    }
+    .rich_modal .g_mod .btn_rich_modal {
+        color: var(--txt);
+    }
+    
+    /* Usernames */
+    .fans-list a strong,
+    .m-comment-hd h3 a {
+        color: var(--txt);
     }
 }
